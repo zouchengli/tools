@@ -15,7 +15,7 @@ function conf_list() {
 function conf_add() {
   if [ ! -f $iptables_conf ]; then
     echo "Configuration file not found!"
-    exit 1
+    touch $iptables_conf
   fi
   echo "Please enter the private network IP of the VM"
   read -p "(Default: Exit):" confvmip
